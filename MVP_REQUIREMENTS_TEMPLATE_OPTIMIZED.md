@@ -4,8 +4,10 @@
 
 ## 🎨 **DESIGN-FIRST PHILOSOPHY:**
 **Your MVP should be visually STUNNING. Users must be impressed by the design before even using the features.**
+**You decide wich complex functionality you mock,if you do it create a README.md that explains why and what.**
 
 - 🎯 **Design > Complex Logic** - Simple functionality with beautiful UI beats complex features with poor design
+- No cargar demasiado la vista, tiene que ser legible y que no duela a los ojos
 - 👁️ **Visual Impact Priority** - Users should "eat the page with their eyes"
 - ✨ **Modern, Professional Look** - Every element should feel polished and intentional
 - 📱 **Mobile-First Excellence** - Looks amazing on all devices
@@ -40,18 +42,18 @@
 ## 🎯 Project Essentials
 
 ### **Project Identity**
-- **MVP Name**: `[Your MVP Name]`
-- **One-Line Description**: `[What does it do in 10 words or less?]`
-- **Problem**: `[What problem does this solve?]`
+- **MVP Name**: EuroTraveñ
+- **One-Line Description**: Un pronosticador rápido de viajes para que un usuario pueda tener una idea de a cuánto le puede salir en total (incluyendo desplazamiento, alojamiento, comidas…)
+- **Problem**: El proceso tedioso de tener que estar yendo destino por destino para ver cual es el precio sumando todo
 
 ### **Target Users** ⚡ *This helps Claude choose perfect colors & design*
-- **Primary User**: `[Who is your main user? e.g., "Young professionals 25-35", "Small business owners", "Students"]`
-- **User Vibe**: `[How should they feel? e.g., "Professional & trustworthy", "Fun & creative", "Calm & focused"]`
+- **Primary User**: Cualquier persona que desee viajar
+- **User Vibe**: Calmada y relajada, que se va de vacaciones
 
 ### **MVP Category** ⚡ *Pick ONE*
 - [ ] 🛍️ E-commerce/Marketplace
 - [ ] 📊 Dashboard/Analytics
-- [ ] 🏢 SaaS Tool
+- [X] 🏢 SaaS Tool
 - [ ] 📝 Content/Blog Platform
 - [ ] 🗓️ Booking/Scheduling
 - [ ] 👥 Social/Community
@@ -62,8 +64,8 @@
 
 ## 🚀 Core Features (MAX 5) - KEEP IT SIMPLE!
 
-> **🚨 CRITICAL**: List ONLY the absolute essentials. **NO COMPLEX LOGIC NEEDED IN MVP!**
-> 
+> **🚨 CRITICAL**: List ONLY the absolute essentials. **NO COMPLEX LOGIC NEEDED IN MVP!**> 
+
 > **Focus on**: Basic CRUD operations, simple forms, display data beautifully
 > **Avoid**: Complex algorithms, advanced workflows, intricate business logic
 
@@ -82,15 +84,22 @@
 - Advanced integrations
 
 **Your 5 Simple Features:**
-1. **Feature 1**: `[What it does + who uses it - KEEP SIMPLE]`
-2. **Feature 2**: `[What it does + who uses it - KEEP SIMPLE]`
-3. **Feature 3**: `[What it does + who uses it - KEEP SIMPLE]`
-4. **Feature 4**: `[What it does + who uses it - KEEP SIMPLE]`
-5. **Feature 5**: `[What it does + who uses it - KEEP SIMPLE]`
+El usuario solo debe introducir una poca información para poder saber que opciones tiene para un presupuesto concreto
+El usuario debe poder saber que opciones de hoteles y viajes tiene que se ajusten a su presupuesto
+El usuario debe poder calcular el presupuesto que la quedando.
+Base de datos falsa, para tres paises. Francia, España, Andorra. 
+El usuario debe poder buscar opcion de viaje para el pais destino y origen concreto y dia concreto
+1. **Añadir presupuesto**: El usuario debe poder añadir su presupuesto y que se vaya restando segun opcion escoja 
+2. **Añadir viajes**: El usuario debe poder añadir viajes boton de escoger destino y origen y que le aparezca horarios y que escoja. 
+3. **Añadir comidas**: El usuario debe poder visualizar cual es la media de la comida que hay en el pais que escoja. Debe haber tres niveles, alto medio y bajo.
+4. **Añadir alojamiento**: El usuario debe poder escoger alojamiento del pais que escoja. Debe haber dos opciones hostal, hotel calidad media o hotel calidad alta. El programa pone la media en ese pais y una foto y el cliente escoge
+5. **Presupuesto dinamico**: Cada vez que se escoge comida, alojamiento o viaje, el usuario debe poder ver el presupuesto bajando y una lista de costes que han reducido ese presupuesto. el usuario debe poder cambiar el presupuesto inicial dinamicamente.
+
+TOdo viaje alojamiento y comida debe mostrarse en tarhjetas bonitas y con fotos. No sobrecargar demasiado.
 
 ### **Primary User Journey** 🛤️
 ```
-Landing Page → [Action 1] → [Action 2] → [Success State]
+Landing Page → Pagina de calculos 
 ```
 
 ---
@@ -98,13 +107,13 @@ Landing Page → [Action 1] → [Action 2] → [Success State]
 ## 👤 Users & Authentication
 
 ### **Authentication Type** ⚡ *Pick ONE*
-- [ ] 🚫 No auth needed (public app)
+- [X] 🚫 No auth needed (public app)
 - [ ] 📧 Email + Password (simple)
 - [ ] 🔗 Magic Link (passwordless)
 - [ ] 🔐 Google OAuth (fastest signup)
 
 ### **User Types** ⚡ *Pick ONE*
-- [ ] Single user type (everyone same permissions)
+- [X] Single user type (everyone same permissions)
 - [ ] Two types: `[Type 1]` and `[Type 2]`
 - [ ] Admin + Users (admin can manage everything)
 
@@ -117,29 +126,26 @@ Landing Page → [Action 1] → [Action 2] → [Success State]
 ### **Main Data Objects**
 > What does your app store? Maximum 3 objects for MVP.
 
-**Object 1: `[Name - e.g., "User"]`**
+
+**Object 1: Alojamientos**
 ```
-- field1: type (e.g., email: string)
-- field2: type (e.g., name: string)
-- field3: type
+- pais: string
+- precio medio: number
 ```
 
-**Object 2: `[Name - e.g., "Post/Product/Booking"]`**
+**Object 2: Comidas**
 ```
-- field1: type
-- field2: type
-- field3: type
-```
-
-**Object 3: `[Name]` (if needed)**
-```
-- field1: type
-- field2: type
+- pais: string
+- precio medio: number
+- calidad/opiniones: number
 ```
 
-### **Relationships** (Keep Simple!)
-- `[Object A]` → belongs to → `[Object B]`
-
+**Object 3: Desplazamientos (if needed)**
+```
+- pais origen
+- pais destino
+- horario
+```
 ---
 
 ## 🎨 Design & UI (VISUAL IMPACT PRIORITY!)
@@ -147,18 +153,13 @@ Landing Page → [Action 1] → [Action 2] → [Success State]
 > **🚨 MOST IMPORTANT SECTION - This is what makes users fall in love!**
 
 ### **Visual Style Direction** ⚡ *Pick ONE - This defines everything!*
-- [ ] 🎯 **Clean & Minimal** (Apple-style, lots of white space)
+- [X] 🎯 **Clean & Minimal** (Apple-style, lots of white space)
 - [ ] 💼 **Professional/Corporate** (LinkedIn, Notion style)
 - [ ] 🎨 **Modern/Trendy** (Figma, Dribbble style)
 - [ ] 🌙 **Dark Mode** (GitHub, Discord style)
 - [ ] 🌈 **Colorful & Vibrant** (Spotify, Slack style)
 - [ ] ✨ **Luxury/Premium** (Tesla, Apple style)
 
-### **Design Inspiration** ⚡ *REQUIRED - Pick 2-3*
-What websites/apps should the design feel like?
-1. **Primary Inspiration**: `[Website/App name - e.g., "Notion", "Airbnb", "Stripe"]`
-2. **Secondary Inspiration**: `[Website/App name]`
-3. **Color/Style Reference**: `[Website/App name]`
 
 ### **Visual Priorities** ⚡ *Check ALL that apply*
 - [X] **Hero section must be STUNNING** (big impact on landing)
@@ -168,6 +169,7 @@ What websites/apps should the design feel like?
 - [X] **Perfect spacing** (generous white space, breathing room)
 - [X] **Color harmony** (cohesive color palette throughout)
 - [X] **Mobile-first perfection** (looks amazing on phones)
+- [X] **NO SOBRECARGAR CON EFECTOS ANIMACIONES QUE SEA LEGIBLE**
 
 ### **Component Strategy** ⚡ *Auto-Selected for Beauty + Speed*
 - ✅ **Shadcn/UI Components** (pre-built, beautiful)
@@ -189,23 +191,20 @@ What websites/apps should the design feel like?
 ## 📱 Pages & Structure
 
 ### **Required Pages** ⚡ *List ALL pages*
-1. **Homepage**: `[What's on it? - Make it VISUALLY STUNNING]`
-2. **Page 2**: `[Purpose? - Focus on beautiful presentation]`
-3. **Page 3**: `[Purpose? - Focus on beautiful presentation]`
-4. **Dashboard/Profile**: `[What user sees after login? - Clean, organized]`
-5. **Settings**: `[What settings do users need? - Simple, beautiful forms]`
+1. **Landing**: Landing, con boton que te direcciona a calculos
+2. **Pagina de calculos**: El usuario introduce su presupuesto y empieza a calcular con opciones
 
 ### **Navigation** 
 ```
-Header: [Link 1] | [Link 2] | [Link 3] | [Login/Profile]
+Header:  Calcula tu viaje
 ```
 
 ### **Homepage Must-Haves** ⚡ *For Visual Impact*
 - [ ] **Stunning hero section** (large headline, beautiful visual)
-- [ ] **Clear value proposition** (what you do in 5 seconds)
+- [X] **Clear value proposition** No pierdas tiempo planificando, hazlo en 15 minutos usando EuroTravel
 - [ ] **Beautiful feature showcase** (3-4 main benefits with icons/images)
 - [ ] **Social proof** (testimonials, logos, stats)
-- [ ] **Strong call-to-action** (prominent signup/demo button)
+- [X] **Strong call-to-action** calcula tu viaje
 
 ---
 
@@ -254,12 +253,10 @@ Header: [Link 1] | [Link 2] | [Link 3] | [Login/Profile]
 > **🚨 REMEMBER: Simple logic = faster development = better design focus**
 
 ### **Key Rules** (if any - MAX 3 simple rules)
-1. `[Rule 1 - e.g., "Free users get 3 projects max" - SIMPLE ONLY]`
-2. `[Rule 2 - e.g., "Files must be under 10MB" - SIMPLE ONLY]`
-3. `[Rule 3 - SIMPLE ONLY]`
+1. No se puede escoger el mismo viaje dos veces, que ponga cantidad para escoger
 
 ### **Special Features** ⚡ *Check if needed (keep simple!)*
-- [ ] Search/Filter (basic text search only)
+- [X] Search/Filter (basic text search only)
 - [ ] File uploads (drag & drop with progress)
 - [ ] Real-time updates (simple live data)
 - [ ] Export data (CSV download)
@@ -278,9 +275,7 @@ Header: [Link 1] | [Link 2] | [Link 3] | [Login/Profile]
 ## 🎯 Success & Analytics
 
 ### **What Makes This MVP Successful?**
-- Success Metric 1: `[e.g., "Users spend 2+ minutes on homepage" - Visual engagement]`
-- Success Metric 2: `[e.g., "80% signup completion rate" - Good UX flow]`
-- Success Metric 3: `[e.g., "Users return within 3 days" - Product value]`
+- Success Metric 1: El cliente pueda calcular su viaje sin problemas, con interfaz bonita y clara.
 
 ---
 
