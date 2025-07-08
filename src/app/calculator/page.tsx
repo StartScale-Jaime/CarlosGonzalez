@@ -118,7 +118,7 @@ export default function CalculatorPage() {
           </Link>
           <div className="flex items-center space-x-2">
             <Plane className="h-6 w-6 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">EuroTraveñ</span>
+            <span className="text-xl font-bold text-gray-900">EuroTravel</span>
           </div>
         </nav>
       </header>

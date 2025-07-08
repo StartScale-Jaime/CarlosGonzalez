@@ -9,10 +9,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "EuroTraveñ - Planifica tu viaje en 15 minutos",
+  title: "EuroTravel - Planifica tu viaje en 15 minutos",
   description: "Un pronosticador rápido de viajes para que puedas tener una idea de cuánto te puede costar en total tu viaje por Europa.",
   keywords: ["viajes", "presupuesto", "Europa", "España", "Francia", "Andorra", "calculadora"],
-  authors: [{ name: "EuroTraveñ Team" }],
+  authors: [{ name: "EuroTravel Team" }],
   viewport: "width=device-width, initial-scale=1",
 };
 

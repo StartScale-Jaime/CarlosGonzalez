@@ -17,7 +17,7 @@ export default function HomePage() {
             className="flex items-center space-x-2"
           >
             <Plane className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-bold text-gray-900">EuroTraveñ</span>
+            <span className="text-2xl font-bold text-gray-900">EuroTravel</span>
           </motion.div>
         </nav>
       </header>
@@ -41,7 +41,7 @@ export default function HomePage() {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            No pierdas tiempo planificando, hazlo en 15 minutos usando EuroTraveñ. 
+            No pierdas tiempo planificando, hazlo en 15 minutos usando EuroTravel. 
             Obtén un presupuesto completo para tu viaje por Europa al instante.
           </motion.p>
 
